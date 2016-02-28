@@ -1,2 +1,2 @@
 # cmusase
-Hosting for cmusase.org
+Hosting for [cmusase.org](cmusase.org)
