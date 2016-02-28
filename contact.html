@@ -201,6 +201,9 @@
       .submit(function(e) {
         e.preventDefault();
 
+        if (!$(this).form('is valid')) {
+          return;
+        }
         $('#submitButton').addClass('loading');
 
         var data = getFormData();
