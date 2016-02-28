@@ -200,6 +200,9 @@
       $('form[name=contact]')
       .submit(function(e) {
         e.preventDefault();
+
+        $('#submitButton').addClass('loading');
+
         var data = getFormData();
         $.ajax({
           method: "POST",
@@ -207,7 +210,8 @@
           data: data
         })
         .done(function( msg ) {
-          alert( "Data Saved: " + msg );
+          $('#submitButton').removeClass('loading');
+          $('#submitButton').addClass('green disabled').text('Submitted!');
         });
       })
       ;
@@ -218,25 +222,7 @@
 </head>
 <body>
 
-<!--<script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '905067456275332',
-      xfbml      : true,
-      version    : 'v2.5'
-    });
-  };
-
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "//connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
- </script>-->
-
- <!-- Sidebar Menu -->
+<!-- Sidebar Menu -->
  <div class="ui vertical inverted sidebar menu">
   <a href="index.html" class="item">Home</a>
   <a href="about.html" class="item">About</a>
@@ -267,54 +253,54 @@
       <h1 class="ui header">Get In Touch</h1>
 
       <p>
-      Interested in meeting us, or have any questions about what we do? We'd love to
-      hear from you! Please fill out the form and we'll get back to you as quickly
-      as possible.
+        Interested in meeting us, or have any questions about what we do? We'd love to
+        hear from you! Please fill out the form and we'll get back to you as quickly
+        as possible.
       </p>
-<div class="ui fluid accordion">
-  <div class="title">
-    <i class="dropdown icon"></i>
-    For companies and recruiters
-  </div>
-  <div class="content">
-    <p class="small">
-     We have a resume book of all our members. If you wish to obtain one or all of the resumes, please feel free to contact us with the form below.
-    </p>
-  </div>
-</div>
-      <div class="ui horizontal form divider">
+      <div class="ui fluid accordion">
+        <div class="title">
+          <i class="dropdown icon"></i>
+          For companies and recruiters
+        </div>
+        <div class="content">
+          <p class="small">
+           We have a resume book of all our members. If you wish to obtain one or all of the resumes, please feel free to contact us with the form below.
+         </p>
+       </div>
+     </div>
+     <div class="ui horizontal form divider">
       <i class="info icon"></i>
-      </div>
-
-      <form name="contact" class="ui form" method="POST"
-      action="https://script.google.com/macros/s/AKfycbx_oXhWn0r8rZiAKEPj3ZJIKLqiSDPYKOVA3_7JnMGfakW4SrY/exec">
-        <div class="field">
-          <label>Name</label>
-          <input name="name" type="text" placeholder="Full Name">
-        </div>
-        <div class="field">
-          <label>Email</label>
-          <input name="email" type="text" placeholder="Email">
-        </div>
-
-        <div class="ui horizontal form divider">
-          <i class="comment icon"></i>
-        </div>
-
-        <div class="field">
-          <label>Subject</label>
-          <input name="subject" type="text" placeholder="Subject">
-        </div>
-        <div class="field">
-          <label>Comment</label>
-          <textarea name="comment" type="text" placeholder=""></textarea>
-        </div>
-        <div class="ui submit button">Submit</div>
-        <div class="ui error message"></div>
-      </form>
-
     </div>
-  </div>
+
+    <form name="contact" class="ui form" method="POST"
+    action="https://script.google.com/macros/s/AKfycbx_oXhWn0r8rZiAKEPj3ZJIKLqiSDPYKOVA3_7JnMGfakW4SrY/exec">
+    <div class="field">
+      <label>Name</label>
+      <input name="name" type="text" placeholder="Full Name">
+    </div>
+    <div class="field">
+      <label>Email</label>
+      <input name="email" type="text" placeholder="Email">
+    </div>
+
+    <div class="ui horizontal form divider">
+      <i class="comment icon"></i>
+    </div>
+
+    <div class="field">
+      <label>Subject</label>
+      <input name="subject" type="text" placeholder="Subject">
+    </div>
+    <div class="field">
+      <label>Comment</label>
+      <textarea name="comment" type="text" placeholder=""></textarea>
+    </div>
+    <div id="submitButton" class="ui submit button">Submit</div>
+    <div class="ui error message"></div>
+  </form>
+
+</div>
+</div>
 </div>
 
 
