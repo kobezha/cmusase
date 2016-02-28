@@ -34,7 +34,7 @@
       margin-top: 3em;
       margin-bottom: 0em;
       font-size: 4em;
-      font-weight: normal;
+      font-weight: bold;
     }
     .masthead h2 {
       font-size: 1.7em;
@@ -66,6 +66,11 @@
       padding-top: 1em;
       padding-bottom: 1em;
       background-color: #fff;
+    }
+
+    .middle.aligned.list .item {
+      padding-top: 1em;
+      padding-bottom: 1em;
     }
 
     .ui.vertical.stripe {
@@ -144,6 +149,24 @@
 </head>
 <body>
 
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '905067456275332',
+      xfbml      : true,
+      version    : 'v2.5'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+
 <!-- Following Menu -->
 <div class="ui large top fixed hidden menu">
   <div class="ui container">
@@ -186,55 +209,70 @@
       </h1>
       <h2>Society of Asian Scientists and Engineers</h2>
       <h3>Carnegie Mellon University</h3>
-      <div class="ui huge primary button">Contact us <i class="right arrow icon"></i></div>
+      <div class="ui hidden divider"></div>
+      <div class="ui huge green button">Contact us <i class="right arrow icon"></i></div>
     </div>
 
-  </div>
-
-  <div class="ui vertical stripe segment">
-    <div class="ui middle aligned stackable grid container">
-      <div class="row">
-        <div class="eight wide column">
-          <h3 class="ui header">We Help Companies and Companions</h3>
-          <p>We can give your company superpowers to do things that they never thought possible. Let us delight your customers and empower your needs...through pure data analytics.</p>
-          <h3 class="ui header">We Make Bananas That Can Dance</h3>
-          <p>Yes that's right, you thought it was the stuff of dreams, but even bananas can be bioengineered.</p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="center aligned column">
-          <a class="ui huge button">Check Them Out</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-  <div class="ui vertical stripe quote segment">
-    <div class="ui equal width stackable internally celled grid">
-      <div class="center aligned row">
-        <div class="column">
-          <h3>"What a Company"</h3>
-          <p>That is what they all say about us</p>
-        </div>
-        <div class="column">
-          <h3>"I shouldn't have gone with their competitor."</h3>
-        </div>
-      </div>
-    </div>
   </div>
 
   <div class="ui vertical stripe segment">
     <div class="ui text container">
-      <h3 class="ui header">Breaking The Grid, Grabs Your Attention</h3>
-      <p>Instead of focusing on content creation and hard work, we have learned how to master the art of doing nothing by providing massive amounts of whitespace and generic content that can seem massive, monolithic and worth your attention.</p>
-      <a class="ui large button">Read More</a>
-      <h4 class="ui horizontal header divider">
-        <a href="#">Case Studies</a>
-      </h4>
-      <h3 class="ui header">Did We Tell You About Our Bananas?</h3>
-      <p>Yes I know you probably disregarded the earlier boasts as non-sequitor filler content, but its really true. It took years of gene splicing and combinatory DNA research, but our bananas can really dance.</p>
-      <a class="ui large button">I'm Still Quite Interested</a>
+      <h3 class="ui header">Committed to Professional Development</h3>
+      <p>
+        Here at the Carnegie Mellon chapter, we prepare students with the skills necessary to succeed in the professional world. We are dedicated to the advancement of Asian heritage scientists and engineers in education and employment so that they can achieve their full career potential.
+      </p>
+    </div>
+  </div>
+
+
+  <div class="ui vertical stripe segment">
+    <div class="ui two column relaxed grid container">
+
+      <div class="ui center aligned column">
+        <h1 class="ui header">Meet the Team</h1>
+        <div class="ui middle aligned list">
+          <div class="item">
+            <img class="ui tiny circular image" src="assets/img/board/alex.jpg">
+            <div class="content">
+              <div class="ui large header">Alex Chen</div>
+              <p>President</p>
+            </div>
+          </div>
+          <div class="item">
+            <img class="ui tiny circular image" src="assets/img/board/tiffany.jpg">
+            <div class="content">
+              <div class="ui large header">Tiffany Lin</div>
+              <p>Vice President</p>
+            </div>
+          </div>
+          <div class="item">
+            <img class="ui tiny circular image" src="assets/img/board/julia.png">
+            <div class="content">
+              <div class="ui large header">Julia Wang</div>
+              <p>Treasurer</p>
+            </div>
+          </div>
+          <div class="item">
+            <img class="ui tiny circular image" src="assets/img/board/mitchell.png">
+            <div class="content">
+              <div class="ui large header">Mitchell Lee</div>
+              <p>Secretary</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ui center aligned column">
+        <h1 class="ui header">What We're Up To</h3>
+        <div class="fb-page" data-href="https://www.facebook.com/SASEatCarnegieMellon/" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
+          <div class="fb-xfbml-parse-ignore">
+            <blockquote cite="https://www.facebook.com/SASEatCarnegieMellon/">
+              <a href="https://www.facebook.com/SASEatCarnegieMellon/">SASE - Carnegie Mellon Chapter</a>
+            </blockquote>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 
