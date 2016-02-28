@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
   <!-- Site Properties -->
-  <title>SASE @ CMU - About</title>
+  <title>SASE @ CMU - Contact</title>
   <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
   <style type="text/css">
 
@@ -68,6 +68,10 @@
       background-color: #fff;
     }
 
+    .ui.vertical.stripe .horizontal.form.divider {
+      margin: 1em 0em;
+    }
+
     .middle.aligned.list .item {
       padding-top: 1em;
       padding-bottom: 1em;
@@ -119,37 +123,98 @@
       clear: both;
     }
 
+    .ui.fluid.accordion p.small {
+      font-size: 1em;
+    }
+
   </style>
 
   <script src="assets/js/jquery.min.js"></script>
   <script src="semantic/dist/semantic.min.js"></script>
-<!--   <script>
-  $(document)
+  <script>
+    $(document)
     .ready(function() {
 
-      // fix menu when passed
-      $('.masthead')
-        .visibility({
-          once: false,
-          onBottomPassed: function() {
-            $('.fixed.menu').transition('fade in');
-            $('.following').transition('fade in');
+      // initialize form validators
+      $('form')
+      .form({
+        on: 'blur',
+        fields: {
+          name: {
+            identifier: 'name',
+            rules: [
+              {
+                type: 'empty',
+                prompt: 'Please enter your name.'
+              }
+            ]
           },
-          onBottomPassedReverse: function() {
-            $('.fixed.menu').transition('fade out');
-            $('.following').transition('fade out');
-          }
-        })
+          email: {
+            identifier: 'email',
+            rules: [
+              {
+                type: 'email',
+                prompt: 'Please enter a valid email.'
+              }
+            ]
+          },
+          subject: {
+            identifier: 'subject',
+            rules: [
+              {
+                type: 'empty',
+                prompt: 'Please enter a subject.'
+              }
+            ]
+          },
+          comment: {
+            identifier: 'comment',
+            rules: [
+              {
+                type: 'empty',
+                prompt: 'Please enter a comment.'
+              }
+            ]
+          },
+        }
+      });
+
+      // initialize accordion
+      $('.ui.accordion')
+      .accordion()
       ;
 
-      // create sidebar and attach to menu open
-      $('.ui.sidebar')
-        .sidebar('attach events', '.toc.item')
+      // get all data in form and return object
+      function getFormData() {
+        var elements = $('form[name=contact]')[0].elements; // all form elements
+        var fields = Object.keys(elements).filter(function(k){
+          return k.length > 1 && elements[k].name && elements[k].name.length > 0 ;
+        });
+        var data = {};
+        fields.forEach(function(k){
+          data[k] = elements[k].value;
+        });
+        return data;
+      }
+
+      $('form[name=contact]')
+      .submit(function(e) {
+        e.preventDefault();
+        var data = getFormData();
+        $.ajax({
+          method: "POST",
+          url: e.target.action,
+          data: data
+        })
+        .done(function( msg ) {
+          alert( "Data Saved: " + msg );
+        });
+      })
       ;
 
     })
-  ;
-</script>-->
+    ;
+  </script>
 </head>
 <body>
 
@@ -172,11 +237,11 @@
  </script>-->
 
  <!-- Sidebar Menu -->
-<div class="ui vertical inverted sidebar menu">
+ <div class="ui vertical inverted sidebar menu">
   <a href="index.html" class="item">Home</a>
-  <a href="about.html" class="active item">About</a>
+  <a href="about.html" class="item">About</a>
   <a href="people.html" class="item">People</a>
-  <a href="contact.html" class="item">Contact</a>
+  <a href="contact.html" class="active item">Contact</a>
 </div>
 
 
@@ -189,57 +254,69 @@
         <i class="sidebar icon"></i>
       </a>
       <a href="index.html" class="item">Home</a>
-      <a href="about.html" class="active item">About</a>
+      <a href="about.html" class="item">About</a>
       <a href="people.html" class="item">People</a>
-      <a href="contact.html" class="item">Contact</a>
+      <a href="contact.html" class="active item">Contact</a>
     </div>
   </div>
 </div>
 
-<div class="ui basic segment">
-  <img class="ui centered large image" src="assets/img/sase-banner.png">
-</div>
-
 <div class="ui vertical stripe segment">
-  <div class="ui text container">
-    <h1 class="ui header">Who We Are</h1>
-    <p>
-      The Society of Asian Scientists and Engineers (SASE) was founded in November 2007 to help Asian heritage scientific and engineering professionals achieve their full potential. Organizations existed for other affinity groups - The National Society of Black Engineers, the Society of Hispanic Professional Engineers, and the Society of Women Engineers – and there was a need for a similar organization where students representing all of the pan Asian cultures could connect and support each other.
-    </p>
-    <p>
-      SASE is a non-profit 501(c)3 organization, and contributions to SASE are tax deductible.
+  <div class="ui grid">
+    <div class="ui eight wide centered column">
+      <h1 class="ui header">Get In Touch</h1>
+
+      <p>
+      Interested in meeting us, or have any questions about what we do? We'd love to
+      hear from you! Please fill out the form and we'll get back to you as quickly
+      as possible.
+      </p>
+<div class="ui fluid accordion">
+  <div class="title">
+    <i class="dropdown icon"></i>
+    For companies and recruiters
+  </div>
+  <div class="content">
+    <p class="small">
+     We have a resume book of all our members. If you wish to obtain one or all of the resumes, please feel free to contact us with the form below.
     </p>
   </div>
 </div>
+      <div class="ui horizontal form divider">
+      <i class="info icon"></i>
+      </div>
 
-<div class="ui vertical stripe segment">
-  <div class="ui text container">
-    <h1 class="ui header">Our Mission</h1> 
-    <p>
-    SASE is dedicated to the advancement of Asian heritage scientists and engineers in education and employment so that they can achieve their full career potential. In addition to professional development, SASE also encourages members to contribute to the enhancement of the communities in which they live.
-    </p>
-    <p>
-    Our mission is to:
-    </p>
-    <div class="ui bulleted stripe list">
-    <div class="item">Prepare Asian heritage scientists and engineers for success in the global business world.</div>
-      <div class="item">Celebrate diversity on campuses and in the workplace.</div>
-      <div class="item">Provide opportunities for members to make contributions to their local communities.</div>
+      <form name="contact" class="ui form" method="POST"
+      action="https://script.google.com/macros/s/AKfycbx_oXhWn0r8rZiAKEPj3ZJIKLqiSDPYKOVA3_7JnMGfakW4SrY/exec">
+        <div class="field">
+          <label>Name</label>
+          <input name="name" type="text" placeholder="Full Name">
+        </div>
+        <div class="field">
+          <label>Email</label>
+          <input name="email" type="text" placeholder="Email">
+        </div>
+
+        <div class="ui horizontal form divider">
+          <i class="comment icon"></i>
+        </div>
+
+        <div class="field">
+          <label>Subject</label>
+          <input name="subject" type="text" placeholder="Subject">
+        </div>
+        <div class="field">
+          <label>Comment</label>
+          <textarea name="comment" type="text" placeholder=""></textarea>
+        </div>
+        <div class="ui submit button">Submit</div>
+        <div class="ui error message"></div>
+      </form>
+
     </div>
-    <p>
-      SASE membership is open to men and women of all ethnic backgrounds.
-    </p>
   </div>
 </div>
 
-<div class="ui vertical stripe segment">
-  <div class="ui text container">
-    <h1 class="ui header">History</h1> 
-    <p>
-    The Procter & Gamble Company saw the opportunity to improve the recruiting, retention and development of Asian heritage scientists and engineers via a nationally recognized technical organization with student chapters on college campuses. In 2007-08 P&G provided the initial membership contribution to establish SASE as a 501(c)3 organization.
-    </p>
-  </div>
-</div>
 
 
 
