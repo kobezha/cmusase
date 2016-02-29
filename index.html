@@ -78,6 +78,11 @@
       background-color: #fff;
     }
 
+    a.nohighlight {
+      color: #fff;
+      text-decoration: none;
+    }
+
     .middle.aligned.list .item {
       padding-top: 1em;
       padding-bottom: 1em;
@@ -124,7 +129,6 @@
       display: table;
       clear: both;
     }
-
   </style>
 
   <script src="assets/js/jquery.min.js"></script>
@@ -152,6 +156,11 @@
       $('.ui.sidebar')
         .sidebar('attach events', '.toc.item')
       ;
+
+      // attach link to divs
+      $('div#contact').on("click", function() {
+        window.location = $(this).find("a").attr("href");
+      });
 
     })
   ;
@@ -219,7 +228,11 @@
       <h2>Society of Asian Scientists and Engineers</h2>
       <h3>Carnegie Mellon University</h3>
       <div class="ui hidden divider"></div>
-      <div class="ui huge green button">Contact us <i class="right arrow icon"></i></div>
+      <div id="contact" class="ui huge green button">
+        <a href="contact.html" class="nohighlight">
+          Contact us <i class="right arrow icon"></i>
+        </a>
+      </div>
     </div>
 
   </div>
