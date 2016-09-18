@@ -8,8 +8,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
   <!-- Site Properties -->
-  <title>SASE @ CMU - Contact</title>
+  <title>SASE @ CMU - About</title>
   <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
   <style type="text/css">
 
     .hidden.menu {
@@ -68,10 +70,6 @@
       background-color: #fff;
     }
 
-    .ui.vertical.stripe .horizontal.form.divider {
-      margin: 1em 0em;
-    }
-
     .middle.aligned.list .item {
       padding-top: 1em;
       padding-bottom: 1em;
@@ -123,107 +121,40 @@
       clear: both;
     }
 
-    .ui.fluid.accordion p.small {
-      font-size: 1em;
-    }
-
   </style>
 
   <script src="assets/js/jquery.min.js"></script>
   <script src="semantic/dist/semantic.min.js"></script>
-  <script>
-    $(document)
+<!--   <script>
+  $(document)
     .ready(function() {
 
-      // initialize form validators
-      $('form')
-      .form({
-        on: 'blur',
-        fields: {
-          name: {
-            identifier: 'name',
-            rules: [
-              {
-                type: 'empty',
-                prompt: 'Please enter your name.'
-              }
-            ]
+      // fix menu when passed
+      $('.masthead')
+        .visibility({
+          once: false,
+          onBottomPassed: function() {
+            $('.fixed.menu').transition('fade in');
+            $('.following').transition('fade in');
           },
-          email: {
-            identifier: 'email',
-            rules: [
-              {
-                type: 'email',
-                prompt: 'Please enter a valid email.'
-              }
-            ]
-          },
-          subject: {
-            identifier: 'subject',
-            rules: [
-              {
-                type: 'empty',
-                prompt: 'Please enter a subject.'
-              }
-            ]
-          },
-          comment: {
-            identifier: 'comment',
-            rules: [
-              {
-                type: 'empty',
-                prompt: 'Please enter a comment.'
-              }
-            ]
-          },
-        }
-      });
-
-      // initialize accordion
-      $('.ui.accordion')
-      .accordion()
+          onBottomPassedReverse: function() {
+            $('.fixed.menu').transition('fade out');
+            $('.following').transition('fade out');
+          }
+        })
       ;
 
-      // get all data in form and return object
-      function getFormData() {
-        var elements = $('form[name=contact]')[0].elements; // all form elements
-        var fields = Object.keys(elements).filter(function(k){
-          return k.length > 1 && elements[k].name && elements[k].name.length > 0 ;
-        });
-        var data = {};
-        fields.forEach(function(k){
-          data[k] = elements[k].value;
-        });
-        return data;
-      }
-
-      $('form[name=contact]')
-      .submit(function(e) {
-        e.preventDefault();
-
-        if (!$(this).form('is valid')) {
-          return;
-        }
-        $('#submitButton').addClass('loading');
-
-        var data = getFormData();
-        $.ajax({
-          method: "POST",
-          url: e.target.action,
-          data: data
-        })
-        .done(function( msg ) {
-          $('#submitButton').removeClass('loading');
-          $('#submitButton').addClass('green disabled').text('Submitted!');
-        });
-      })
+      // create sidebar and attach to menu open
+      $('.ui.sidebar')
+        .sidebar('attach events', '.toc.item')
       ;
 
     })
-    ;
-  </script>
+  ;
+</script>-->
 </head>
 <body>
+
 <script>
   window.fbAsyncInit = function() {
     FB.init({
@@ -240,15 +171,15 @@
      js.src = "//connect.facebook.net/en_US/sdk.js";
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
-</script>
+ </script>
 
-<!-- Sidebar Menu -->
- <div class="ui vertical inverted sidebar menu">
+ <!-- Sidebar Menu -->
+<div class="ui vertical inverted sidebar menu">
   <a href="index.html" class="item">Home</a>
   <a href="about.html" class="item">About</a>
-  <a href="events.html" class="item">Events</a>
+  <a href="events.html" class="active item">Events</a>
   <a href="people.html" class="item">People</a>
-  <a href="contact.html" class="active item">Contact</a>
+  <a href="contact.html" class="item">Contact</a>
 </div>
 
 
@@ -262,70 +193,19 @@
       </a>
       <a href="index.html" class="item"><img class="ui mini image" src="assets/img/logo.png"></a>
       <a href="about.html" class="item">About</a>
-      <a href="events.html" class="item">Events</a>
+      <a href="events.html" class="active item">Events</a>
       <a href="people.html" class="item">People</a>
-      <a href="contact.html" class="active item">Contact</a>
+      <a href="contact.html" class="item">Contact</a>
     </div>
   </div>
 </div>
 
 <div class="ui vertical stripe segment">
-  <div class="ui grid">
-    <div class="ui eight wide centered column">
-      <h1 class="ui header">Get In Touch</h1>
-
-      <p>
-        Interested in meeting us, or have any questions about what we do? We'd love to
-        hear from you! Please fill out the form and we'll get back to you as quickly
-        as possible.
-      </p>
-      <div class="ui fluid accordion">
-        <div class="title">
-          <i class="dropdown icon"></i>
-          For companies and recruiters
-        </div>
-        <div class="content">
-          <p class="small">
-           We have a resume book of all our members. If you wish to obtain one or all of the resumes, please feel free to contact us with the form below.
-         </p>
-       </div>
-     </div>
-     <div class="ui horizontal form divider">
-      <i class="info icon"></i>
-    </div>
-
-    <form name="contact" class="ui form" method="POST"
-    action="https://script.google.com/macros/s/AKfycbx_oXhWn0r8rZiAKEPj3ZJIKLqiSDPYKOVA3_7JnMGfakW4SrY/exec">
-    <div class="field">
-      <label>Name</label>
-      <input name="name" type="text" placeholder="Full Name">
-    </div>
-    <div class="field">
-      <label>Email</label>
-      <input name="email" type="text" placeholder="Email">
-    </div>
-
-    <div class="ui horizontal form divider">
-      <i class="comment icon"></i>
-    </div>
-
-    <div class="field">
-      <label>Subject</label>
-      <input name="subject" type="text" placeholder="Subject">
-    </div>
-    <div class="field">
-      <label>Comment</label>
-      <textarea name="comment" type="text" placeholder=""></textarea>
-    </div>
-    <div id="submitButton" class="ui submit button">Submit</div>
-    <div class="ui error message"></div>
-  </form>
-
+  <div class="ui text container">
+    <h1 class="ui header">Events</h1>
+    <iframe src="https://calendar.google.com/calendar/embed?mode=WEEK&amp;height=400&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=andrew.cmu.edu_qqumir9j959mg1pgdbfg5l691k%40group.calendar.google.com&amp;color=%232F6309&amp;ctz=America%2FNew_York" style="border-width:0" width="800" height="400" frameborder="0" scrolling="no"></iframe>
+  </div>
 </div>
-</div>
-</div>
-
-
 
 
 <div class="ui vertical footer segment">
@@ -334,7 +214,7 @@
       <div class="three wide column">
         <div class="ui link list">
           <a href="about.html" class="item">About</a>
-          <a href="events.html" class="item">Events</a>
+          <a href="events.html" class="active item">Events</a>
           <a href="people.html" class="item">People</a>
           <a href="contact.html" class="item">Contact</a>
         </div>
@@ -351,6 +231,9 @@
      </div>
  </div>
 </div>
+
+
+
 
 </body>
 
