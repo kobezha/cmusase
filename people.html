@@ -1,136 +1,142 @@
-
 <!DOCTYPE html>
 <html>
+
 <head>
-  <!-- Standard Meta -->
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <!-- Standard Meta -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <!-- Site Properties -->
-  <title>SASE @ CMU - People</title>
-  <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
-  <style type="text/css">
+    <!-- Site Properties -->
+    <title>SASE @ CMU - People</title>
+    <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
+    <style type="text/css">
+        .hidden.menu {
+            display: none;
+        }
+        
+        .hidden.following {
+            display: none;
+        }
+        
+        .masthead.segment {
+            min-height: 700px;
+            padding: 1em 0em;
+        }
+        
+        .masthead .logo.item img {
+            margin-right: 1em;
+        }
+        
+        .masthead .ui.menu .ui.button {
+            margin-left: 0.5em;
+        }
+        
+        .masthead h1.ui.header {
+            margin-top: 3em;
+            margin-bottom: 0em;
+            font-size: 4em;
+            font-weight: bold;
+        }
+        
+        .masthead h2 {
+            font-size: 1.7em;
+            font-weight: normal;
+        }
+        
+        .masthead.bg1:after {
+            background-image: url("assets/img/bg1.jpg");
+        }
+        
+        .masthead:after {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            z-index: -1;
+            width: 100%;
+            height: 100%;
+            content: '';
+            background-size: cover;
+            opacity: 0.6;
+        }
+        
+        .following {
+            position: fixed;
+            top: 0px;
+            z-index: 900;
+            left: 0%;
+            width: 100%;
+            padding-top: 1em;
+            padding-bottom: 1em;
+            background-color: #fff;
+        }
+        
+        .middle.aligned.list .item {
+            padding-top: 1em;
+            padding-bottom: 1em;
+        }
+        
+        .ui.vertical.stripe {
+            padding: 6em 0em;
+        }
+        
+        .ui.vertical.stripe h3 {
+            font-size: 1.5em;
+        }
+        
+        .ui.vertical.stripe .button + h3,
+        .ui.vertical.stripe p + h3 {
+            margin-top: 3em;
+        }
+        
+        .ui.vertical.stripe .floated.image {
+            clear: both;
+        }
+        
+        .ui.vertical.stripe p {
+            font-size: 1.20em;
+        }
+        
+        .ui.vertical.stripe p.bio {
+            padding: 5px 0px;
+            font-size: 0.9em;
+        }
+        
+        .ui.vertical.stripe .horizontal.divider {
+            margin: 3em 0em;
+        }
+        
+        .ui.stripe.list {
+            font-size: 1.20em;
+        }
+        
+        .quote.stripe.segment {
+            padding: 0em;
+        }
+        
+        .quote.stripe.segment .grid .column {
+            padding-top: 5em;
+            padding-bottom: 5em;
+        }
+        
+        .footer.segment {
+            padding: 5em 0em;
+        }
+        
+        .secondary.pointing.menu .toc.item {
+            display: none;
+        }
+        
+        .clearfix:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+    </style>
 
-    .hidden.menu {
-      display: none;
-    }
-
-    .hidden.following {
-      display: none;
-    }
-
-    .masthead.segment {
-      min-height: 700px;
-      padding: 1em 0em;
-    }
-    .masthead .logo.item img {
-      margin-right: 1em;
-    }
-    .masthead .ui.menu .ui.button {
-      margin-left: 0.5em;
-    }
-    .masthead h1.ui.header {
-      margin-top: 3em;
-      margin-bottom: 0em;
-      font-size: 4em;
-      font-weight: bold;
-    }
-    .masthead h2 {
-      font-size: 1.7em;
-      font-weight: normal;
-    }
-
-    .masthead.bg1:after {
-      background-image: url("assets/img/bg1.jpg");
-    }
-
-    .masthead:after {
-      position: absolute;
-      top: 0px;
-      left: 0px;
-      z-index: -1;
-      width: 100%;
-      height: 100%;
-      content: '';
-      background-size: cover;
-      opacity: 0.6;
-    }
-
-    .following {
-      position: fixed;
-      top: 0px;
-      z-index: 900;
-      left: 0%;
-      width: 100%;
-      padding-top: 1em;
-      padding-bottom: 1em;
-      background-color: #fff;
-    }
-
-    .middle.aligned.list .item {
-      padding-top: 1em;
-      padding-bottom: 1em;
-    }
-
-
-
-    .ui.vertical.stripe {
-      padding: 6em 0em;
-    }
-    .ui.vertical.stripe h3 {
-      font-size: 1.5em;
-    }
-    .ui.vertical.stripe .button + h3,
-    .ui.vertical.stripe p + h3 {
-      margin-top: 3em;
-    }
-    .ui.vertical.stripe .floated.image {
-      clear: both;
-    }
-    .ui.vertical.stripe p {
-      font-size: 1.20em;
-    }
-
-    .ui.vertical.stripe p.bio {
-      padding: 5px 0px;
-      font-size: 0.9em;
-    }
-    .ui.vertical.stripe .horizontal.divider {
-      margin: 3em 0em;
-    }
-
-    .ui.stripe.list {
-      font-size: 1.20em;
-    }
-
-    .quote.stripe.segment {
-      padding: 0em;
-    }
-    .quote.stripe.segment .grid .column {
-      padding-top: 5em;
-      padding-bottom: 5em;
-    }
-
-    .footer.segment {
-      padding: 5em 0em;
-    }
-
-    .secondary.pointing.menu .toc.item {
-      display: none;
-    }
-
-    .clearfix:after {
-      content: "";
-      display: table;
-      clear: both;
-    }
-
-  </style>
-
-  <script src="assets/js/jquery.min.js"></script>
-  <script src="semantic/dist/semantic.min.js"></script>
-<!--   <script>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="semantic/dist/semantic.min.js"></script>
+    <!--   <script>
   $(document)
     .ready(function() {
 
@@ -158,265 +164,252 @@
   ;
 </script>-->
 </head>
+
 <body>
 
-<script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '905067456275332',
-      xfbml      : true,
-      version    : 'v2.5'
-    });
-  };
+    <script>
+        window.fbAsyncInit = function () {
+            FB.init({
+                appId: '905067456275332'
+                , xfbml: true
+                , version: 'v2.5'
+            });
+        };
 
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "//connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
- </script>
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) {
+                return;
+            }
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
 
- <!-- Sidebar Menu -->
-<div class="ui vertical inverted sidebar menu">
-  <a href="index.html" class="item">Home</a>
-  <a href="about.html" class="item">About</a>
-  <a href="events.html" class="item">Events</a>
-  <a href="people.html" class="active item">People</a>
-  <a href="contact.html" class="item">Contact</a>
-</div>
-
-
-<!-- Page Contents -->
-<div class="ui vertical center aligned basic segment">
-
-  <div class="ui container">
-    <div class="ui large secondary pointing menu">
-      <a class="toc item">
-        <i class="sidebar icon"></i>
-      </a>
-      <a href="index.html" class="item"><img class="ui mini image" src="assets/img/logo.png"></a>
-      <a href="about.html" class="item">About</a>
-      <a href="events.html" class="item">Events</a>
-      <a href="people.html" class="active item">People</a>
-      <a href="contact.html" class="item">Contact</a>
+    <!-- Sidebar Menu -->
+    <div class="ui vertical inverted sidebar menu">
+        <a href="index.html" class="item">Home</a>
+        <a href="about.html" class="item">About</a>
+        <a href="events.html" class="item">Events</a>
+        <a href="people.html" class="active item">People</a>
+        <a href="contact.html" class="item">Contact</a>
     </div>
-  </div>
-</div>
 
-<div class="ui vertical stripe segment">
-  <div class="ui container">
-    <div class="ui relaxed centered grid">
 
-      <div class="row">
-        <div class="three wide column"></div>
-        <div class="six wide column">
-          <h1 class="ui header">Our Team</h1>
-        </div>
-      </div>
+    <!-- Page Contents -->
+    <div class="ui vertical center aligned basic segment">
 
-      <div class="ui horizontal divider"></div>
-
-      <div class="row">
-        <div class="three wide column">
-          <img class="ui small circular image" src="assets/img/board/alex.jpg">
+        <div class="ui container">
+            <div class="ui large secondary pointing menu">
+                <a class="toc item">
+                    <i class="sidebar icon"></i>
+                </a>
+                <a href="index.html" class="item"><img class="ui mini image" src="assets/img/logo.png"></a>
+                <a href="about.html" class="item">About</a>
+                <a href="events.html" class="item">Events</a>
+                <a href="people.html" class="active item">People</a>
+                <a href="contact.html" class="item">Contact</a>
+            </div>
         </div>
-        <div class="six wide column">
-          <div class="ui header">Alex Chen</div>
-          <div class="sub header">President</div>
-          <div class="sub header">Materials Science and Engineering, 2017</div>
-          <p class="bio">
-            Hi! I was born and raised in the suburbs of Chicago, and came to Pittsburgh I was 18 to attend CMU. I'm majoring in Materials Science and Engineering, with a minor of electronic materials. I'm interested in environmental technologies and sustainable practices, and hope to end up in a field developing alternative energies. I joined SASE to further the development of my professional skills and make connections with others on campus and in the professional world. I look forward to forming bonds with company contacts as President!
-          </p>
-        </div>
-      </div>
-
-      <div class="ui horizontal divider"></div>
-
-      <div class="row">
-        <div class="three wide column">
-          <img class="ui small circular image" src="assets/img/board/tiffany.jpg">
-        </div>
-        <div class="six wide column">
-          <div class="ui header">Tiffany Lin</div>
-          <div class="sub header">Vice President</div>
-          <div class="sub header">Mechanical Engineering, minor in Biomedical Engineering, 2018</div>
-          <p class="bio">
-          Hi! I'm sophomore from Edison, NJ, majoring in Mechanical Engineering and minoring in Biomedical Engineering. Even though it may seem like I'm a STEM person, I also enjoy the arts, like singing, writing, and jamming out to my ukulele. I'm involved on campus as a CMU Andrew Ambassador, which means I give tours and help out in the Admissions Office. Besides serving as the VP on a regional level, I am also a blogger and editor for the <a href="https://medium.com/@SASEPrints">SASE National blog</a>. Check it out!
-          </p>
-        </div>
-      </div>
-
-      <div class="ui horizontal divider"></div>
-
-      <div class="row">
-        <div class="three wide column">
-          <img class="ui small circular image" src="assets/img/board/julia.png">
-        </div>
-        <div class="six wide column">
-          <div class="ui header">Julia Wang</div>
-          <div class="sub header">Treasurer</div>
-          <div class="sub header">Electrical and Computer Engineering, 2016</div>
-          <p class="bio">
-          I am a junior Electrical and Computer Engineering major from California, and I enjoy biking, swimming, and playing computer games and music. I like to eat a lot too, and would like to one day learn and master the art of making macaroons. If I could go anywhere for a next adventure, I'd like to float on a raft down the Mississippi River, like in Huckleberry Finn!
-          </p>
-        </div>
-      </div>
-      <div class="ui horizontal divider"></div>
-
-      <div class="row">
-        <div class="three wide column">
-          <img class="ui small circular image" src="assets/img/board/mitchell.png">
-        </div>
-        <div class="six wide column">
-          <div class="ui header">Mitchell Lee</div>
-          <div class="sub header">Treasurer</div>
-          <div class="sub header">Electrical and Computer Engineering, 2018</div>
-          <p class="bio">
-           Hi! I'm from Montgomery, New Jersey, which is about 15 minutes North of Princeton. In my free time, I like to play ultimate frisbee and tennis and play board games. I'm a huge Disney movie fan (favorite is the Lion King) and also watch a lot of TV shows (HIMYM, Friends, Arrow, Flash, Agents of SHIELD, Game of Thrones, among others).
-          </p>
-        </div>
-      </div>
-      <div class="ui horizontal divider"></div>
-
-      <div class="row">
-        <div class="three wide column">
-          <img class="ui small circular image" src="assets/img/board/george.jpg">
-        </div>
-        <div class="six wide column">
-          <div class="ui header">George Situ</div>
-          <div class="sub header">Fundraising Chair</div>
-          <div class="sub header">Chemical Engineering, Minor in Business Management and Materials Science, 2018</div>
-          <p class="bio">
-          I was born in Guang Zhou China and moved to LA at a young age. I’m a very light hearted person and I love to try out new things and meet new people. I have a huge interest in business, but I’m an engineer, because CIT! CIT, We have job seCurITy! (2018 chant) I compete in chess, play basketball, read a lot, and play poker.
-          </p>
-        </div>
-      </div>
-      <div class="ui horizontal divider"></div>
-
-      <div class="row">
-        <div class="three wide column">
-          <img class="ui small circular image" src="assets/img/board/shuo.jpg">
-        </div>
-        <div class="six wide column">
-          <div class="ui header">Shuo Liu</div>
-          <div class="sub header">Marketing Director</div>
-          <div class="sub header">Undecided Engineering, 2019</div>
-          <p class="bio">
-          Hey! I'm a freshmen from Columbus, Ohio. I'm not too sure what I'm majoring in yet, but I've got a lot of different interests so I'm sure it'll work out no matter what!
-          My interests are watching movies, hanging with friends, and playing tennis. Now that I'm in college I've also developed a fondness for napping... I'm really excited to be Marketing Director and connect with all the members of SASE!
-          </p>
-        </div>
-      </div>
-      <div class="ui horizontal divider"></div>
-
-      <div class="row">
-        <div class="three wide column">
-          <img class="ui small circular image" src="assets/img/board/mimi.jpg">
-        </div>
-        <div class="six wide column">
-          <div class="ui header">Mimi Niou</div>
-          <div class="sub header">Events Coordinator</div>
-          <div class="sub header">Undecided Engineering, 2019</div>
-          <p class="bio">
-            Hi! My name is Mimi and I'm a freshman at CMU. I was born in Durham and grew up in Chapel Hill, NC, but lived in Hong Kong for two years in elementary school. I love traveling to new places, eating yummy foods, and taking lots of photos. It was great being a freshman representative for SASE last semester, and I'm excited for all the great events that will take place this coming year!
-          </p>
-        </div>
-      </div>
-      <div class="ui horizontal divider"></div>
-
-      <div class="row">
-        <div class="three wide column">
-          <img class="ui small circular image" src="assets/img/board/teddy.jpg">
-        </div>
-        <div class="six wide column">
-          <div class="ui header">Teddy Cai</div>
-          <div class="sub header">Corporate Liaison</div>
-          <div class="sub header">Chemical Engineering and Biomedical Engineering, 2019</div>
-          <p class="bio">
-            I was born in San Francisco, California but spent most of my teenage years in the dusty city of El Paso, Texas. So, needless to say, Pittsburgh is a bit of a change. When I'm not doing stuff for SASE I'm also involved in AICHE and tutoring work. But what I spend most of my free time on (by far) is music. I've been playing bassoon for 7 years, saxophone for 4, guitar for 9, ukulele for 3, and singing amateurishly since I was a child. I've also recently decided to pick up the mandolin. Music is, in many ways, a second passion and I'm constantly either listening to or playing music, typically of the indie variety.
-
-            I hope to expand my professional experience and acumen in my time as SASE's corporate liaison and look forward to a fulfilling year full of new memories.
-          </p>
-        </div>
-      </div>
-      <div class="ui horizontal divider"></div>
-
-      <div class="row">
-        <div class="three wide column">
-          <img class="ui small circular image" src="assets/img/board/brandon.jpg">
-        </div>
-        <div class="six wide column">
-          <div class="ui header">Brandon Takao</div>
-          <div class="sub header">Mentorship Chair</div>
-          <div class="sub header">Electrical and Computer Engineering and Biomedical Engineering, 2019</div>
-          <p class="bio">
-          Hi! I'm currently majoring in ECE/BME and hoping to achieve an integrated Master's/Bachelors here at CMU. I was born and raised on the wonderful island of Oahu in Hawaii, and I've been trying to adjust to the different culture and weather of Pittsburgh ever since I've been here. I love playing basketball, soccer, and video games with friends, and I'm an avid bowler and poker player! Other than SASE, I'm involved with ASA (Asian Student's Association), CMSR (Carnegie Mellon Solar Racing), IV (Intervarsity Bible Study), and I'm the Co-president of the UPC (Undergraduate Poker Club). Hopefully I can give everyone the best experience possible through our mentorship program!
-          </p>
-        </div>
-      </div>
-      <div class="ui horizontal divider"></div>
-
-      <div class="row">
-        <div class="three wide column">
-          <img class="ui small circular image" src="assets/img/board/yushuan.jpg">
-        </div>
-        <div class="six wide column">
-          <div class="ui header">Yushuan Peng</div>
-          <div class="sub header">Design Chair</div>
-          <div class="sub header">Materials Science and Engineering and Biomedical Engineering, 2018</div>
-          <p class="bio">
-            Hi! I grew up in southwest Washington (not Seattle). I am in the class of 2018 and majoring in Materials Science and Engineering as well as Biomedical Engineering. I'm also involved in research with artificial lungs, flute choir, string theory, and CIA as a buggy driver. In my free time, I enjoy reading, sleeping, and playing video games.
-          </p>
-        </div>
-      </div>
-      <div class="ui horizontal divider"></div>
-
-      <div class="row">
-        <div class="three wide column">
-          <img class="ui small circular image" src="assets/img/board/richard.jpg">
-        </div>
-        <div class="six wide column">
-          <div class="ui header">Richard Zhao</div>
-          <div class="sub header">Social Media Chair, Webmaster</div>
-          <div class="sub header">Physics and Computer Science, 2018</div>
-          <p class="bio">
-            Hi! I'm from New Jersey, but I've also lived in Canada and North Carolina. At CMU, I'm a teaching assistant for an introductory computer science class. I split my free time between running, taking photos, building things, and doing calligraphy.
-          </p>
-        </div>
-      </div>
-      <div class="ui horizontal divider"></div>
-
     </div>
-  </div>
-</div>
 
+    <div class="ui vertical stripe segment">
+        <div class="ui container">
+            <div class="ui relaxed centered grid">
 
+                <div class="row">
+                    <div class="three wide column"></div>
+                    <div class="six wide column">
+                        <h1 class="ui header">Our Team</h1>
+                    </div>
+                </div>
 
-<div class="ui vertical footer segment">
-  <div class="ui container">
-    <div class="ui stackable divided equal height stackable grid">
-      <div class="three wide column">
-        <div class="ui link list">
-          <a href="about.html" class="item">About</a>
-          <a href="events.html" class="item">Events</a>
-          <a href="people.html" class="item">People</a>
-          <a href="contact.html" class="item">Contact</a>
+                <div class="ui horizontal divider"></div>
+
+                <div class="row">
+                    <div class="three wide column">
+                        <img class="ui small circular image" src="assets/img/board/tiffany.jpg">
+                    </div>
+                    <div class="six wide column">
+                        <div class="ui header">Tiffany Lin</div>
+                        <div class="sub header">President</div>
+                        <div class="sub header">Mechanical Engineering, 2018</div>
+                        <p class="bio">
+                            Tiffany is a junior from Edison, NJ, majoring in Mechanical Engineering. Upon first glance, it may seem like she is a STEM person, but she also enjoys the arts, like making clay stuffs and singing while jamming out to her ukulele. Besides serving as the President on the Regional level, she is also a blogger and editor for the SASE National blog, which can be found <a href="https://medium.com/@SASEPrints">here</a>.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="ui horizontal divider"></div>
+
+                <div class="row">
+                    <div class="three wide column">
+                        <img class="ui small circular image" src="assets/img/board/mitchell.png">
+                    </div>
+                    <div class="six wide column">
+                        <div class="ui header">Mitchell Lee</div>
+                        <div class="sub header">Vice President</div>
+                        <div class="sub header">Electrical and Computer Engineering, 2018 </div>
+                        <p class="bio">
+                            Mitchell is a junior Electrical and Computer Engineering major from near Princeton, NJ. If he's not watching TV shows like HIMYM, Friends, or Parks and Rec, he spends his time playing board games or recreational volleyball. He is also a blogger for SASEPrints, the SASE National blog.
+
+                        </p>
+                    </div>
+                </div>
+
+                <div class="ui horizontal divider"></div>
+
+                <div class="row">
+                    <div class="three wide column">
+                        <img class="ui small circular image" src="assets/img/board/jia.jpg">
+                    </div>
+                    <div class="six wide column">
+                        <div class="ui header">Jia Kim</div>
+                        <div class="sub header">Treasurer</div>
+                        <div class="sub header">Chemistry, 2019</div>
+                        <p class="bio">
+                            Jia is a junior Biological Chemistry major from Pittsburgh, PA. She is studying as a Pre-Health student and works as a Biochemistry researcher. Jia is a treasurer in All University Orchestra of CMU, and enjoys playing the flute in the orchestra. In her free times, she likes cooking and crafting.
+                        </p>
+                    </div>
+                </div>
+                <div class="ui horizontal divider"></div>
+
+                <div class="row">
+                    <div class="three wide column">
+                        <img class="ui small circular image" src="assets/img/board/raziq.jpg">
+                    </div>
+                    <div class="six wide column">
+                        <div class="ui header">Raziq Mohideen</div>
+                        <div class="sub header">Treasurer</div>
+                        <div class="sub header">Electrical and Computer Engineering, 2019</div>
+                        <p class="bio">
+                            Raziq is a sophomore Electrical and Computer Engineering major from Edison, NJ. He likes to wind down after working by spending time with friends or playing video games. Raziq is also the Treasurer of the Muslim Student Association and a researcher under Professor Raj Rajkumar.
+                        </p>
+                    </div>
+                </div>
+                <div class="ui horizontal divider"></div>
+
+                <div class="row">
+                    <div class="three wide column">
+                        <img class="ui small circular image" src="assets/img/board/jennifer.jpg">
+                    </div>
+                    <div class="six wide column">
+                        <div class="ui header">Jennifer Xiao</div>
+                        <div class="sub header">Fundraising Chair</div>
+                        <div class="sub header">Electrical and Computer Engineering, 2019</div>
+                        <p class="bio">
+                            Jennifer is a sophomore Electrical and Computer Engineering major from Philadelphia, PA. She devotes much of her time to her organizations, SASE, the CMU Ballroom Dance Club, and Magic@CMU. In her free time, she likes reading fiction and hanging out with her friends.
+                        </p>
+                    </div>
+                </div>
+                <div class="ui horizontal divider"></div>
+
+                <div class="row">
+                    <div class="three wide column">
+                        <img class="ui small circular image" src="assets/img/board/mimi.jpg">
+                    </div>
+                    <div class="six wide column">
+                        <div class="ui header">Mimi Niou</div>
+                        <div class="sub header">Marketing Director</div>
+                        <div class="sub header">Electrical and Computer Engineering, 2019</div>
+                        <p class="bio">
+                            Mimi is a sophomore Electrical and Computer Engineering major from Chapel Hill, NC. In addition to ECE, she is minoring in learning media and loves to teach and work with kids. In her free time, she enjoys reading, travelling to new places, and eating.
+                        </p>
+                    </div>
+                </div>
+                <div class="ui horizontal divider"></div>
+
+                <div class="row">
+                    <div class="three wide column">
+                        <img class="ui small circular image" src="assets/img/board/brandon.jpg">
+                    </div>
+                    <div class="six wide column">
+                        <div class="ui header">Brandon Takao</div>
+                        <div class="sub header">External Relations Director</div>
+                        <div class="sub header">Electrical and Computer Engineering, 2019</div>
+                        <p class="bio">
+                            Brandon is a sophomore Electrical and Computer Engineering major from Honolulu, HI. He's pursuing an integrated Master's/Bachelor's degree along with a potential Business minor. He's also Co-President of UPC (Undergraduate Poker Club), and is involved in ASA and IV as well. His hobbies include poker, basketball, soccer, and video games.
+                        </p>
+                    </div>
+                </div>
+                <div class="ui horizontal divider"></div>
+
+                <div class="row">
+                    <div class="three wide column">
+                        <img class="ui small circular image" src="assets/img/board/praxis.jpg">
+                    </div>
+                    <div class="six wide column">
+                        <div class="ui header">Praxis Bays</div>
+                        <div class="sub header">Mentorship Director</div>
+                        <div class="sub header">Mechanical Engineering, 2020</div>
+                        <p class="bio">
+                            Praxis is a freshman Mechanical Engineering major from Cupertino, CA. She enjoys playing with her two dogs and three cats and eating cool and delicious food with friends. If she's not studying or doing homework, she is probably playing video games or sleeping.
+                        </p>
+                    </div>
+                </div>
+                <div class="ui horizontal divider"></div>
+
+                <div class="row">
+                    <div class="three wide column">
+                        <img class="ui small circular image" src="assets/img/board/ben.png">
+                    </div>
+                    <div class="six wide column">
+                        <div class="ui header">Ben Chen</div>
+                        <div class="sub header">Design Chair</div>
+                        <div class="sub header">Electrical and Computer Engineering, 2018</div>
+                        <p class="bio">
+                            Ben is a junior from Nashville, TN. He's going after a Bachelor's degree in Electrical and Computer Engineering, along with an integrated Master's degree and two minors in Business Administration and Human-Computer Interaction. He enjoys working out, shopping online, and eating at buffets. If he's not asleep, you'll probably find him heavily procrastinating despite a meager workload.
+                        </p>
+                    </div>
+                </div>
+                <div class="ui horizontal divider"></div>
+
+                <div class="row">
+                    <div class="three wide column">
+                        <img class="ui small circular image" src="assets/img/board/tiffanyc.jpg">
+                    </div>
+                    <div class="six wide column">
+                        <div class="ui header">Tiffany Chen</div>
+                        <div class="sub header">Webmaster</div>
+                        <div class="sub header">Information Systems, 2019</div>
+                        <p class="bio">
+                            Tiffany is a sophomore Information Systems major from San Jose, CA. In her free time, she enjoys baking desserts, coding software projects, and dabbling in design.
+                        </p>
+                    </div>
+                </div>
+                <div class="ui horizontal divider"></div>
+
+            </div>
         </div>
-      </div>
+    </div>
 
-      <div class="seven wide column">
-        <h4 class="ui header">Society of Asian Scientists and Engineers, Carnegie Mellon</h4>
-        <p>&copy; 2016</p>
-      </div>
 
-      <div class="three wide column">
-       <div class="fb-like" data-href="https://www.facebook.com/SASEatCarnegieMellon/" data-layout="box_count" data-action="like" data-show-faces="true" data-share="false"></div>
-     </div>
-     </div>
- </div>
-</div>
+
+    <div class="ui vertical footer segment">
+        <div class="ui container">
+            <div class="ui stackable divided equal height stackable grid">
+                <div class="three wide column">
+                    <div class="ui link list">
+                        <a href="about.html" class="item">About</a>
+                        <a href="events.html" class="item">Events</a>
+                        <a href="people.html" class="item">People</a>
+                        <a href="contact.html" class="item">Contact</a>
+                    </div>
+                </div>
+
+                <div class="seven wide column">
+                    <h4 class="ui header">Society of Asian Scientists and Engineers, Carnegie Mellon</h4>
+                    <p>&copy; 2017</p>
+                </div>
+
+                <div class="three wide column">
+                    <div class="fb-like" data-href="https://www.facebook.com/SASEatCarnegieMellon/" data-layout="box_count" data-action="like" data-show-faces="true" data-share="false"></div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 </body>
