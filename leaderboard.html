@@ -129,10 +129,40 @@
             display: table;
             clear: both;
         }
+        
+        body {
+            counter-reset: item;
+        }
+        
+        ol {
+            list-style: none;
+            border: 2px solid lightblue;
+            border-radius: 4px;
+        }
+        
+        li {
+            counter-increment: item;
+            padding: 20px;
+            font-size: 18px;
+            background: lightblue;
+            background: RGBA(173, 216, 230, 0.6);
+            border-bottom: 2px solid white;
+            text-align: justify;
+        }
+        
+        li:before {
+            text-align: center;
+            margin-right: 15px;
+            content: counter(item);
+            color: white;
+            width: 1.2em;
+            display: inline-block;
+        }
     </style>
 
     <script src="assets/js/jquery.min.js"></script>
     <script src="semantic/dist/semantic.min.js"></script>
+    <script src="https://use.fontawesome.com/53945ddeb8.js"></script>
     <!--   <script>
   $(document)
     .ready(function() {
@@ -214,47 +244,48 @@
         </div>
     </div>
 
-    <div class="ui basic segment">
-        <img class="ui centered large image" src="assets/img/sase-banner.png">
-    </div>
-
     <div class="ui vertical stripe segment">
         <div class="ui text container">
-            <h1 class="ui header">Who We Are</h1>
+            <h1 class="ui header">Mentorship at SASE</h1>
             <p>
-                The Society of Asian Scientists and Engineers (SASE) was founded in November 2007 to help Asian heritage scientific and engineering professionals achieve their full potential. Organizations existed for other affinity groups - The National Society of Black Engineers, the Society of Hispanic Professional Engineers, and the Society of Women Engineers – and there was a need for a similar organization where students representing all of the pan Asian cultures could connect and support each other.
-            </p>
-            <p>
-                SASE is a non-profit 501(c)3 organization, and contributions to SASE are tax deductible.
+                CMU SASE Mentorship aims to strengthen connections and relationships within SASE. New members, called mentees, are encouraged to apply for mentors who aim to share the values of SASE and assist mentees in professionally and in university. Through challenges, SASE activities, volunteer events, and others, mentor and mentee relationships are fostered.
             </p>
         </div>
     </div>
 
     <div class="ui vertical stripe segment">
         <div class="ui text container">
-            <h1 class="ui header">Our Mission</h1>
+            <h1 class="ui header">Mentor + Mentee Challenge Leaderboard</h1>
             <p>
-                SASE is dedicated to the advancement of Asian heritage scientists and engineers in education and employment so that they can achieve their full career potential. In addition to professional development, SASE also encourages members to contribute to the enhancement of the communities in which they live.
+                To encourage competition between mentorship pairs, this leaderboard will keep track of points throughout the semester. At the end of the semester the top teams will be awarded! The point system is as follows (in the form "Activity: Mentor AND Mentee attend/Mentor OR Mentee attend points):
+                <div class="ui bulleted stripe list">
+                    <div class="item">Mentor Mentee Challenges: 25/10 points</div>
+                    <div class="item">Tabling: 10/4 points</div>
+                    <div class="item">SASE Activity Attendance: 15/5 points</div>
+                    <div class="item">GBM Activity Win: 25/15 points</div>
+                    <div class="item">GBM Attendance: 5/2 points</div>
+                </div>
             </p>
             <p>
-                Our mission is to:
-            </p>
-            <div class="ui bulleted stripe list">
-                <div class="item">Prepare Asian heritage scientists and engineers for success in the global business world.</div>
-                <div class="item">Celebrate diversity on campuses and in the workplace.</div>
-                <div class="item">Provide opportunities for members to make contributions to their local communities.</div>
-            </div>
-            <p>
-                SASE membership is open to men and women of all ethnic backgrounds.
-            </p>
-        </div>
-    </div>
-
-    <div class="ui vertical stripe segment">
-        <div class="ui text container">
-            <h1 class="ui header">History</h1>
-            <p>
-                The Procter & Gamble Company saw the opportunity to improve the recruiting, retention and development of Asian heritage scientists and engineers via a nationally recognized technical organization with student chapters on college campuses. In 2007-08 P&G provided the initial membership contribution to establish SASE as a 501(c)3 organization.
+                <ol id="leaderboard">
+                    <li>Mitchell Lee + Raziq Mohideen (85 points) <i class="fa fa-trophy fa-lg" aria-hidden="true" style="color:#FFD700;"></i></li>
+                    <li>Tiffany Lin + Praxis Bays (74 points) <i class="fa fa-trophy fa-lg" aria-hidden="true" style="color:#C0C0C0;"></i></li>
+                    <li>Brandon Taokao + Wendy Summer (48 points) <i class="fa fa-trophy fa-lg" aria-hidden="true" style="color:#CD7F32;"></i></li>
+                    <li>Diane Li + Maxine Kwan (46 points)</li>
+                    <li>Mitchell Lee + Mimi Niou (41 points)</li>
+                    <li>Raziq Mohideen + Shanel Huang (40 points)</li>
+                    <li>Mitchell Lee + David Zeng (38 points)</li>
+                    <li>Tiffany Lin + Surekha Boyd (18 points)</li>
+                    <li>Ben Chen + Harry Xu (16 points)</li>
+                    <li>Kevin Zhang + Lawrence Xu (16 points)</li>
+                    <li>Harry Xu + Kai Lung (15 points)</li>
+                    <li>Aaron Tian + Krishna Dave (14 points)</li>
+                    <li>Evaline Ju + Ben Chen (11 points)</li>
+                    <li>Shuo Liu + Ian Suzuki (9 points)</li>
+                    <li>Jennifer Xiao + Xining Gao (8 points)</li>
+                    <li>Jia Kim + Crystal Song(6 points)</li>
+                    <li>Tiffany Chen + Cheryl Chang (2 points)</li>
+                </ol>
             </p>
         </div>
     </div>
